@@ -7,25 +7,30 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:local="clr-namespace:Client"
         mc:Ignorable="d"
-        Title="MainWindow" Name="Wind" Height="376.744" Width="800">
+        Title="Indexes" Name="Wind" Height="376.744" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
+            <RowDefinition Height="30"/>
             <RowDefinition />
         </Grid.RowDefinitions>
 
         <fa:ImageAwesome Icon="Search" SpinDuration="5" Foreground="#FFFF3C3C" Margin="10" 
                          HorizontalAlignment="Left"/>
-        <ComboBox Name="SearchBox" IsEditable="True" FontSize="14" 
+        <ComboBox Name="SearchBox" IsEditable="True" FontSize="14" ItemsSource="{Binding Places}"
                   VerticalContentAlignment="Center" Margin="50 5 5 5" 
-                  Padding="5" Text="{Binding SearchText}">
-            <!--<i:Interaction.Triggers>
-                <i:EventTrigger EventName="TextBoxBase.TextChanged">
-                    <i:InvokeCommandAction Command="{Binding TypeCmd}"/>
+                  Padding="5" Text="{Binding SearchText}"
+                  IsDropDownOpen="{Binding IsDropdOpen}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction 
+                            Command="{Binding SelectPlaceCmd}"/>
                 </i:EventTrigger>
-            </i:Interaction.Triggers>-->
+            </i:Interaction.Triggers>
+
         </ComboBox>
-        <!--TextBoxBase.TextChanged="SearchBox_TextChanged"-->
+        <Button Grid.Row="1" HorizontalAlignment="Right" Content="SEARCH" 
+                Margin="5 0" Padding="50 0" Command="{Binding SendDataCmd}"/>
 
     </Grid>
 </Window>

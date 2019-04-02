@@ -33,23 +33,23 @@ namespace TestExamles
             //string path = @"http://terra.rv.ua/price/download.php?price";
             //client.DownloadFile(path, "price.zip");
             
-            string requestStr = @"https://maps.googleapis.com/maps/api/place/autocomplete/json?key=AIzaSyCRuMrU5eZqvCXaxRg8FOacV9iea6SBEkI&input=Rivn";
-            WebRequest request = WebRequest.Create(requestStr);
-            WebResponse response = request.GetResponse();
+            //string requestStr = @"https://maps.googleapis.com/maps/api/place/autocomplete/json?key=AIzaSyCRuMrU5eZqvCXaxRg8FOacV9iea6SBEkI&input=Rivn";
+            //WebRequest request = WebRequest.Create(requestStr);
+            //WebResponse response = request.GetResponse();
 
-            using (StreamReader reader = new StreamReader(response.GetResponseStream()))
-            {
+            //using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+            //{
 
-                string responseText = reader.ReadToEnd();
-               // Console.WriteLine(responseText);
+            //    string responseText = reader.ReadToEnd();
+            //   // Console.WriteLine(responseText);
 
-                Cityes c = JsonConvert.DeserializeObject<Cityes>(responseText);
+            //    Cityes c = JsonConvert.DeserializeObject<Cityes>(responseText);
 
-                foreach (var item in c.predictions)
-                {
-                    Console.WriteLine(item.description);
-                }
-            }
+            //    foreach (var item in c.predictions)
+            //    {
+            //        Console.WriteLine(item.description);
+            //    }
+            //}
 
 
 

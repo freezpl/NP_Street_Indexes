@@ -19,7 +19,7 @@
                          HorizontalAlignment="Left"/>
         <ComboBox Name="SearchBox" IsEditable="True" FontSize="14" ItemsSource="{Binding Places}"
                   VerticalContentAlignment="Center" Margin="50 5 5 5" 
-                  Padding="5" Text="{Binding SearchText}"
+                  Padding="5" Text="{Binding SearchText}" DisplayMemberPath="description"
                   IsDropDownOpen="{Binding IsDropdOpen}">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectionChanged">
@@ -32,5 +32,28 @@
         <Button Grid.Row="1" HorizontalAlignment="Right" Content="SEARCH" 
                 Margin="5 0" Padding="50 0" Command="{Binding SendDataCmd}"/>
 
+        <TextBlock Grid.Row="2" Text="ssadasd"/>
+        <!--<Image Grid.Row="2" Source="https://lh4.googleusercontent.com/-1wzlVdxiW14/USSFZnhNqxI/AAAAAAAABGw/YpdANqaoGh4/s1600-w400/Google%2BSydney"/>-->
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition />
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="1" Source="{Binding Img}"/>
+            <Button Command="{Binding NextCmd}" CommandParameter="false">
+                <Button.Content>
+                    <fa:ImageAwesome Icon="ArrowLeft" SpinDuration="5" Foreground="#FFFF3C3C" Margin="10" 
+                         HorizontalAlignment="Left"/>
+                </Button.Content>
+            </Button>
+            <Button Grid.Column="2" Command="{Binding NextCmd}" CommandParameter="true">
+                <Button.Content>
+                    <fa:ImageAwesome Icon="ArrowRight" SpinDuration="5" Foreground="#FFFF3C3C" Margin="10" 
+                         HorizontalAlignment="Left"/>
+                </Button.Content>
+            </Button>
+        </Grid>
     </Grid>
 </Window>

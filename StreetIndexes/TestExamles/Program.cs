@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 
@@ -32,7 +33,7 @@ namespace TestExamles
             //WebClient client = new WebClient();
             //string path = @"http://terra.rv.ua/price/download.php?price";
             //client.DownloadFile(path, "price.zip");
-            
+
             //string requestStr = @"https://maps.googleapis.com/maps/api/place/autocomplete/json?key=AIzaSyCRuMrU5eZqvCXaxRg8FOacV9iea6SBEkI&input=Rivn";
             //WebRequest request = WebRequest.Create(requestStr);
             //WebResponse response = request.GetResponse();
@@ -51,27 +52,41 @@ namespace TestExamles
             //    }
             //}
 
-
-
             //Console.WriteLine(ip);
             // Console.ReadLine();
+
+            Work();
+            Console.WriteLine("End program");
         }
-    }
 
-    public class Cityes
-    {
-        public List<City> predictions { get; set; }
-
-        public Cityes()
+        async static void Work()
         {
-            predictions = new List<City>();
+            Thread.Sleep(1000);
 
-
+            Console.WriteLine("Start method");
+            await Task.Run(() => {
+                Thread.Sleep(1000);
+                Console.WriteLine("End task");
+            });
+            Console.WriteLine("End method");
         }
     }
+    
 
-    public class City
-    {
-        public string description { get; set; }
-    }
+    //public class Cityes
+    //{
+    //    public List<City> predictions { get; set; }
+
+    //    public Cityes()
+    //    {
+    //        predictions = new List<City>();
+
+
+    //    }
+    //}
+
+    //public class City
+    //{
+    //    public string description { get; set; }
+    //}
 }

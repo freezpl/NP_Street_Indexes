@@ -176,13 +176,14 @@ namespace Client.Models
                         StringBuilder fullPlaseStr = new StringBuilder();
                         byte[] respBuffer = new byte[256];
                         int bytes = 0;
-
                         do
                         {
                             bytes = socket.Receive(respBuffer, respBuffer.Length, 0);
                             fullPlaseStr.Append(Encoding.Unicode.GetString(respBuffer, 0, bytes));
                         }
                         while (socket.Available > 0);
+                        socket.Shutdown(SocketShutdown.Both);
+                        socket.Close();
                         LoadFullInfo(fullPlaseStr.ToString());
                     }
                     catch (Exception e)

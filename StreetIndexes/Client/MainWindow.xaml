@@ -7,15 +7,15 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:local="clr-namespace:Client"
         mc:Ignorable="d"
-        Title="Indexes" Name="Wind" Height="376.744" Width="800">
+        Title="Indexes" Name="Wind" Height="376.744" Width="800" Background="Beige">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="40"/>
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <fa:ImageAwesome Icon="Search" SpinDuration="5" Foreground="#FFFF3C3C" Margin="10" 
+        <fa:ImageAwesome Icon="Search" SpinDuration="5" Foreground="Teal" Margin="10" 
                          HorizontalAlignment="Left"/>
         <ComboBox Name="SearchBox" IsEditable="True" FontSize="14" ItemsSource="{Binding Places}"
                   VerticalContentAlignment="Center" Margin="50 5 5 5" 
@@ -30,7 +30,7 @@
 
         </ComboBox>
         <Button Grid.Row="1" HorizontalAlignment="Right" Content="SEARCH" 
-                Margin="5 0" Padding="50 0" Command="{Binding SendDataCmd}"/>
+                Margin="5 0 5 5" Padding="50 0" Command="{Binding SendDataCmd}"/>
 
         <TextBlock Grid.Row="2" Text="ssadasd"/>
         <!--<Image Grid.Row="2" Source="https://lh4.googleusercontent.com/-1wzlVdxiW14/USSFZnhNqxI/AAAAAAAABGw/YpdANqaoGh4/s1600-w400/Google%2BSydney"/>-->
@@ -44,13 +44,13 @@
             <Image Grid.Column="1" Source="{Binding Img}"/>
             <Button Command="{Binding NextCmd}" CommandParameter="false">
                 <Button.Content>
-                    <fa:ImageAwesome Icon="ArrowLeft" SpinDuration="5" Foreground="#FFFF3C3C" Margin="10" 
+                    <fa:ImageAwesome Icon="ArrowLeft" SpinDuration="5" Foreground="Teal" Margin="10" 
                          HorizontalAlignment="Left"/>
                 </Button.Content>
             </Button>
             <Button Grid.Column="2" Command="{Binding NextCmd}" CommandParameter="true">
                 <Button.Content>
-                    <fa:ImageAwesome Icon="ArrowRight" SpinDuration="5" Foreground="#FFFF3C3C" Margin="10" 
+                    <fa:ImageAwesome Icon="ArrowRight" SpinDuration="5" Foreground="Teal" Margin="10" 
                          HorizontalAlignment="Left"/>
                 </Button.Content>
             </Button>
